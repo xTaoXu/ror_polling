@@ -23,9 +23,9 @@
           </ul>
         </div>
     <% end %>
-      <%= f.text_field :name %>
-      <%= f.text_field :description %>
-      <%= f.submit %>
+      <%= f.text_field :name, :placeholder => "Name"%>
+      <%= f.text_field :description, :placeholder => "Message" %>
+      <%= f.submit "Sent", :class => 'post_submit'%>
 <% end %>
 
 </div>
