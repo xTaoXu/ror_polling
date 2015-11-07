@@ -1,0 +1,21 @@
+<h1>Real time online chat room</h1>
+<div id="main-container">
+  <%= render 'lists'%>
+  <br>
+  <%= form_for(@post) do |f| %>
+    <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+          <ul>
+            <% @post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+      <%= f.text_field :name, :placeholder => "Name"%>
+      <%= f.text_field :description, :placeholder => "Message" %>
+      <%= f.submit "Sent", :class => 'post_submit'%>
+  <% end %>
+</div>

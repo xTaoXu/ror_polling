@@ -1,0 +1,8 @@
+  <ul class="messages">
+    <% @posts.each do |post| %>
+        <li>
+          <span class="msgSender"><span><%=post.name%></span><span>:</span></span>
+          <span></span><span><%=post.description%></span>
+        </li>
+    <% end %>
+  </ul>

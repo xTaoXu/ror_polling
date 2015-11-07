@@ -1,0 +1,24 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#main-container {background:beige}
+
+#post_name {
+  width: 25%;
+  height: 30px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+#post_description {
+  width: 60%;
+  height: 30px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.post_submit {
+  width: 10%;
+  height: 30px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
