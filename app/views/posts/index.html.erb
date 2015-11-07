@@ -1,17 +1,8 @@
-<h1>Real time online polling room</h1>
+<h1>Real time online chat room</h1>
 <div id="main-container">
   <%= render 'lists'%>
-<br>
-
-<!--
-<form class="form row" >
-  <input autocomplete="off" id="post-name" class="msg" placeholder="name" >
-  <input autocomplete="off" id="post-desc" class="msg" placeholder="message" >
-  <button type="submit">Send</button>
-</form>
--->
-
-<%= form_for(@post) do |f| %>
+  <br>
+  <%= form_for(@post) do |f| %>
     <% if @post.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -26,6 +17,5 @@
       <%= f.text_field :name, :placeholder => "Name"%>
       <%= f.text_field :description, :placeholder => "Message" %>
       <%= f.submit "Sent", :class => 'post_submit'%>
-<% end %>
-
+  <% end %>
 </div>
