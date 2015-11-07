@@ -1,30 +1,15 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Real time online polling room</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.name %></td>
-        <td><%= post.description %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div id="main-container">
+  <%= render 'lists'%>
 <br>
+
+<!--
+<form class="form row" >
+  <input autocomplete="off" id="post-name" class="msg" placeholder="name" >
+  <input autocomplete="off" id="post-desc" class="msg" placeholder="message" >
+  <button type="submit">Send</button>
+</form>
+-->
 
 <%= form_for(@post) do |f| %>
     <% if @post.errors.any? %>
@@ -38,16 +23,9 @@
           </ul>
         </div>
     <% end %>
-
-    <div class="field">
-      <%= f.label :name %><br>
       <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_area :description %>
-    </div>
-    <div class="actions">
+      <%= f.text_field :description %>
       <%= f.submit %>
-    </div>
 <% end %>
+
+</div>
